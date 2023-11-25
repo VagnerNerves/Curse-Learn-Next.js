@@ -129,6 +129,32 @@ Layout developed by [Name](https://www.instagram.com/urlName/)
   console.log(pathname)
   ```
 
+- Modulo 6 - Configuração do banco de dados e projeto
+
+- Modulo 7 - Fetching Data
+
+  Foi feito buscaa api para mostrar na pagina "app/dashboar/page.tsx" e falado sobre cascatas de solicitações e busca paralela de dados, Segue exemplo abaixo de busca paralela:
+
+  ```bash
+  export async function fetchCardData() {
+    try {
+      const invoiceCountPromise = sql`SELECT COUNT(*) FROM invoices`;
+      const customerCountPromise = sql`SELECT COUNT(*) FROM customers`;
+      const invoiceStatusPromise = sql`SELECT
+          SUM(CASE WHEN status = 'paid' THEN amount ELSE 0 END) AS "paid",
+          SUM(CASE WHEN status = 'pending' THEN amount ELSE 0 END) AS "pending"
+          FROM invoices`;
+
+      const data = await Promise.all([
+        invoiceCountPromise,
+        customerCountPromise,
+        invoiceStatusPromise,
+      ]);
+      // ...
+    }
+  }
+  ```
+
 ## 💡 Technologies Used
 
 - [x] [React](https://reactjs.org/)
