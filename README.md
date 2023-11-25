@@ -1,10 +1,10 @@
 <p align="center">
-  <img width="200px" alt="Curse Learn Next.js" title="Curse Learn Next.js" src="logo.svg" />
+  <img width="200px" alt="Curse Learn Next.js" title="Curse Learn Next.js" src=".github/logonextjs.png" />
   
   <h1 align="center">Curse Learn Next.js</h1>
 
   <p align="center">
-    🔗 <a href="https://URLThisProject.com">https://URLThisProject.com</a> 🔗
+    🔗 <a href="https://curse-learn-next-js-vagnernerves.vercel.app/">https://curse-learn-next-js-vagnernerves.vercel.app/</a> 🔗
   </p>  
   
   Este projeto faz parte do [curso do Next.js](https://nextjs.org/learn/dashboard-app).
