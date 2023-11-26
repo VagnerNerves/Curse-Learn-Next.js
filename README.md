@@ -189,6 +189,36 @@ Layout developed by [Name](https://www.instagram.com/urlName/)
 
   ```
 
+- Modulo 10 - Renderização parcial
+
+  Foi falado sobre renderizaçãoes parciais e mostrado um pouco mais sobre o Suspense do react.
+
+- Modulo 11 - Pesquisa e paginação
+
+  Utilizamos o "useSearchParams", "usePathname" e "useRouter" do "next/navigation" para busca via url no servidor, segue exemplo abaixo:
+
+  ```bash
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+
+  function handleSearch(term: string) {
+   const params = new URLSearchParams(searchParams);
+   if (term) {
+     params.set('query', term);
+   } else {
+     params.delete('query');
+   }
+   replace(`${pathname}?${params.toString()}`);
+  }
+  ```
+
+  Foi utilizando tambem a bilioteca [use-debounce](https://www.npmjs.com/package/use-debounce) para só fazer a consulta se o usuairio parou realmente de digitar.
+
+- Modulo 12 - Dados Mutantes
+
+  Neste modulos aprendemos usar ações de servidor para inserir, editar e excluir. Olhe o arquivo "app/lib/actions.ts"
+
 ## 💡 Technologies Used
 
 - [x] [React](https://reactjs.org/)
