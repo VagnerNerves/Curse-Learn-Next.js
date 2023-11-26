@@ -155,6 +155,40 @@ Layout developed by [Name](https://www.instagram.com/urlName/)
   }
   ```
 
+- Modulo 8 - Renderização Estatica e Dinamica
+
+  Para cancelar a renderização estatica pode-se usar o "next/cache" buscando o "unable_noStore" e usando nas funções. Segue exemplo:
+
+  ```bash
+  import { unstable_noStore as noStore } from 'next/cache';
+
+  export async function fetchRevenue() {
+    // Add noStore() here to prevent the response from being cached.
+    // This is equivalent to in fetch(..., {cache: 'no-store'}).
+    noStore();
+
+    // ...
+  }
+  ```
+
+- Modulo 9 - Transmissão
+
+  O arquivo "logadin.tsx" é uma rquivo especial Nextjs, que colcoa o Loading até a pagina ser carregada.
+
+  Para nao carregar o Loading para todas as rotas, podemos usar o [Grupo de Rotas](https://nextjs.org/docs/app/building-your-application/routing/route-groups) onde criar uma pasta "(NomeDaPasta)" e dentro dela signica que so vai ser executado no principal e nao nas outras rotas dentro.
+
+  No react existe o "Suspense", ele ajuda a so exibir o componente depois que ele tiver carregado podendo assim mostrar um esqueleto ou um loading antes. segue o exemplo:
+
+  ```bash
+  import { Suspense } from 'react';
+  import { RevenueChartSkeleton } from '@/app/ui/skeletons';
+
+  <Suspense fallback={<RevenueChartSkeleton />}>
+    <RevenueChart />
+  </Suspense>
+
+  ```
+
 ## 💡 Technologies Used
 
 - [x] [React](https://reactjs.org/)
