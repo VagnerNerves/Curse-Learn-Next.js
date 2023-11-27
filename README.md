@@ -36,7 +36,7 @@ Layout developed by [Name](https://www.instagram.com/urlName/)
 
 ## 👏 Learning and more Implementations
 
-- Modulo 1 - Instação
+- [Modulo 1](https://nextjs.org/learn/dashboard-app/getting-started) - Instação
 
   Aprendido a instalar o projeto base.
 
@@ -46,11 +46,11 @@ Layout developed by [Name](https://www.instagram.com/urlName/)
   npx create-next-app@latest
   ```
 
-- Modulo 2 - CSS Styling
+- [Modulo 2](https://nextjs.org/learn/dashboard-app/css-styling) - CSS Styling
 
   Aprendio que podemos utilizar o [Tailwindcss](https://tailwindcss.com/) como padrão do projeto, ou criar um arquivo [nome do componente].module.css e importar na pagina utilizada. [Documentação Styling](https://nextjs.org/docs/pages/building-your-application/styling)
 
-- Modulo 3 - Otimização fonts and Images
+- [Modulo 3](https://nextjs.org/learn/dashboard-app/optimizing-fonts-images) - Otimização fonts and Images
 
   O Next possui o module "next/font/google" onde podemos importar as conts do google assim:
 
@@ -90,7 +90,7 @@ Layout developed by [Name](https://www.instagram.com/urlName/)
 
   Segue a [documentação das Images](https://nextjs.org/docs/app/building-your-application/optimizing/images).
 
-- Module 4 - Layouts and Pages
+- [Module 4](https://nextjs.org/learn/dashboard-app/creating-layouts-and-pages) - Layouts and Pages
 
   Na pasta app sao consideradas as rotas, mas cada pasta para ser considerado rota precisa ter um arquivo "page.tsx" se tiver outro nome de arquivo ele considera como componente e nao como rota.
 
@@ -98,7 +98,7 @@ Layout developed by [Name](https://www.instagram.com/urlName/)
 
   [Segue a documentação dos routes](https://nextjs.org/docs/app/building-your-application/routing/defining-routes)
 
-- Module 5 - Navigate
+- [Module 5](https://nextjs.org/learn/dashboard-app/navigating-between-pages) - Navigate
 
   Para navegação de rotas o Next possui o modulo "next/link", segue exemplo:
 
@@ -129,9 +129,9 @@ Layout developed by [Name](https://www.instagram.com/urlName/)
   console.log(pathname)
   ```
 
-- Modulo 6 - Configuração do banco de dados e projeto
+- [Modulo 6](https://nextjs.org/learn/dashboard-app/setting-up-your-database) - Configuração do banco de dados e projeto
 
-- Modulo 7 - Fetching Data
+- [Modulo 7](https://nextjs.org/learn/dashboard-app/fetching-data) - Fetching Data
 
   Foi feito buscaa api para mostrar na pagina "app/dashboar/page.tsx" e falado sobre cascatas de solicitações e busca paralela de dados, Segue exemplo abaixo de busca paralela:
 
@@ -155,7 +155,7 @@ Layout developed by [Name](https://www.instagram.com/urlName/)
   }
   ```
 
-- Modulo 8 - Renderização Estatica e Dinamica
+- [Modulo 8](https://nextjs.org/learn/dashboard-app/static-and-dynamic-rendering) - Renderização Estatica e Dinamica
 
   Para cancelar a renderização estatica pode-se usar o "next/cache" buscando o "unable_noStore" e usando nas funções. Segue exemplo:
 
@@ -171,7 +171,7 @@ Layout developed by [Name](https://www.instagram.com/urlName/)
   }
   ```
 
-- Modulo 9 - Transmissão
+- [Modulo 9](https://nextjs.org/learn/dashboard-app/streaming) - Transmissão
 
   O arquivo "logadin.tsx" é uma rquivo especial Nextjs, que colcoa o Loading até a pagina ser carregada.
 
@@ -189,11 +189,11 @@ Layout developed by [Name](https://www.instagram.com/urlName/)
 
   ```
 
-- Modulo 10 - Renderização parcial
+- [Modulo 10](https://nextjs.org/learn/dashboard-app/partial-prerendering) - Renderização parcial
 
   Foi falado sobre renderizaçãoes parciais e mostrado um pouco mais sobre o Suspense do react.
 
-- Modulo 11 - Pesquisa e paginação
+- [Modulo 11](https://nextjs.org/learn/dashboard-app/adding-search-and-pagination) - Pesquisa e paginação
 
   Utilizamos o "useSearchParams", "usePathname" e "useRouter" do "next/navigation" para busca via url no servidor, segue exemplo abaixo:
 
@@ -215,9 +215,97 @@ Layout developed by [Name](https://www.instagram.com/urlName/)
 
   Foi utilizando tambem a bilioteca [use-debounce](https://www.npmjs.com/package/use-debounce) para só fazer a consulta se o usuairio parou realmente de digitar.
 
-- Modulo 12 - Dados Mutantes
+- [Modulo 12](https://nextjs.org/learn/dashboard-app/mutating-data) - Dados Mutantes
 
   Neste modulos aprendemos usar ações de servidor para inserir, editar e excluir. Olhe o arquivo "app/lib/actions.ts"
+
+- [Modulo 13](https://nextjs.org/learn/dashboard-app/error-handling) - Tratamento de erros
+
+  Para tratar um erro crie uma rquivo "erro.tsx" ele tem que ser "use client" e ter este padrão:
+
+  ```bash
+  'use client';
+
+  import { useEffect } from 'react';
+
+  export default function Error({
+    error,
+    reset,
+  }: {
+    error: Error & { digest?: string };
+    reset: () => void;
+  }) {
+    useEffect(() => {
+      // Optionally log the error to an error reporting service
+      console.error(error);
+    }, [error]);
+
+    return (
+      <main className="flex h-full flex-col items-center justify-center">
+        <h2 className="text-center">Something went wrong!</h2>
+        <button
+          className="mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-400"
+          onClick={
+            // Attempt to recover by trying to re-render the invoices route
+            () => reset()
+          }
+        >
+          Try again
+        </button>
+      </main>
+    );
+  }
+  ```
+
+  Você tamnem pode criar aruivo para nao encontrado, criando um arquivo "not-found.tsx", veja como foi implementano na pasta "app/dashboard/invoicex/[id]/edit/".
+
+- [Modulo 14](https://nextjs.org/learn/dashboard-app/improving-accessibility) - Melhorando a acessibilidade
+
+  Foi falado sobre acessibilidade e verificado erros no servidor, para isso olhe o [commit](https://github.com/VagnerNerves/curse-learn-next.js/commit/98d598308dbd57dbfbbadc713b0d89e38dc9ddd7?diff=unified)
+
+- [Modulo 15](https://nextjs.org/learn/dashboard-app/adding-authentication) - Adicionando autenticação
+
+  Aprendemos sobre autenticação e autorização. Fizemso autenticação com o "NextAut", para ver as autterações olhe o [commit
+  ](https://github.com/VagnerNerves/curse-learn-next.js/commit/950111d84ffdef2234a3266c0545828fa0e27cc4)
+
+- [Modulo 16](https://nextjs.org/learn/dashboard-app/adding-metadata) - Adicionando Meta Data
+
+  Para Adicionar Meta Data acesse o Layout ou page e coloque o comando:
+
+  ```bash
+  import { Metadata } from 'next';
+
+  export const metadata: Metadata = {
+    title: 'Acme Dashboard',
+    description: 'The official Next.js Course Dashboard, built with App Router.',
+    metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+  };
+  ```
+
+  Tambem temos o template que podemos usar na rota principal e nas rotas filhas so alterar o titulo segue exemplo abaixo:
+
+  ```bash
+  # Rota Pai
+  import { Metadata } from 'next';
+
+  export const metadata: Metadata = {
+    title: {
+      template: '%s | Acme Dashboard',
+      default: 'Acme Dashboard',
+    },
+    description: 'The official Next.js Learn Dashboard built with App Router.',
+    metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+  };
+  ```
+
+  ```bash
+  # Rota Filho
+  import { Metadata } from 'next';
+
+  export const metadata: Metadata = {
+    title: 'Invoices',
+  };
+  ```
 
 ## 💡 Technologies Used
 
