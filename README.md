@@ -15,13 +15,6 @@
 - [🧭 Table of contents](#-table-of-contents)
 - [👏 Learning and more Implementations](#-learning-and-more-implementations)
 - [💡 Technologies Used](#-technologies-used)
-- [📂 Folder Structure](#-folder-structure)
-- [🚀 Running the Project](#-running-the-project)
-  - [Back-end](#back-end)
-  - [Front-end Web](#front-end-web)
-  - [Mobile](#mobile)
-- [📝 Routes](#-routes)
-- [🌎 License](#-license)
 - [✒ Author](#-author)
 
 <!-- ## 🎥 Implementation Video
@@ -313,8 +306,10 @@ Layout developed by [Name](https://www.instagram.com/urlName/)
 - [x] [Nextjs](https://nextjs.org/)
 - [x] [TypeScript](https://www.typescriptlang.org/)
 - [x] [Tailwindcss](https://tailwindcss.com/)
+- [x] [Use Debounce](https://www.npmjs.com/package/use-debounce)
+- [x] [NextAult.js](https://next-auth.js.org/)
 
-## 📂 Folder Structure
+<!-- ## 📂 Folder Structure
 
 ```plainText
 app
@@ -440,7 +435,7 @@ Start the server
 
 ## 🌎 License
 
-This project is under the MIT license. See the [LICENSE](https://choosealicense.com/licenses/mit/) file for more details.
+This project is under the MIT license. See the [LICENSE](https://choosealicense.com/licenses/mit/) file for more details. -->
 
 ## ✒ Author
 
